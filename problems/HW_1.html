@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1. Roman to Integer</title>
+    <link rel="stylesheet" href="../overall.css">
+    <link rel="stylesheet" href="./problem_no.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="./problem.js"></script>
+    <script src="../isCookieExists.js"></script>
+
+</head>
+<body onload="hadCookie()">
+    <div class="main_container" ng-app="main_app">
+
+        <div class="logo ">
+            <h1> <code> &lt;Hello World/&gt; </code></h1>
+        </div>
+        
+        <div class="quotes">
+
+        </div>
+
+        <div class="header">
+            <div class="problemSTMTdetails">
+                <a href="#">Statement</a> |
+                <a href="./submissions?key=HW_1">Submissions</a> |
+            </div>
+
+        </div>  
+
+        <div class="notifications">
+            <box-icon name='bell' color="white" type='solid'></box-icon>
+        </div>
+
+        <div class="menu-bar" ng-controller="menuBarCtrl">
+            <aside>
+                <ul ng-repeat="x in menu">
+                    <li><a href={{x.link}}>{{x.name}}</a><hr></li> 
+                </ul>
+            </aside>
+        </div>
+
+        <div class="opt_content">
+            <h2>#1. Roman to Integer</h2> <hr>
+            <p>
+                Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+                <table border="1" width="15%" style="text-align: center;">
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>I</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>V</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>X</td>
+                        <td>10</td>
+                    </tr><tr>
+                        <td>L</td>
+                        <td>50</td>
+                    </tr><tr>
+                        <td>C</td>
+                        <td>100</td>
+                    </tr><tr>
+                        <td>D</td>
+                        <td>500</td>
+                    </tr><tr>
+                        <td>M</td>
+                        <td>1000</td>
+                    </tr>
+                </table>
+                <br>
+                For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. 
+                The number 27 is written as XXVII, which is XX + V + II.
+                <br><br>
+                Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, 
+                the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to
+                the number nine, which is written as IX. There are six instances where subtraction is used:
+                <ul>
+                    <li>
+                        I can be placed before V (5) and X (10) to make 4 and 9. 
+                    </li>
+                    <li>
+                        X can be placed before L (50) and C (100) to make 40 and 90. 
+                    </li>
+                    <li>
+                        C can be placed before D (500) and M (1000) to make 400 and 900.
+                    </li>
+                </ul>
+                Given a roman numeral, convert it to an integer.
+            </p>
+            <hr>
+            <p>
+                <h3>Constraints:</h3>
+                <ul>
+                    <li>
+                        1 <= s.length <= 15
+                    </li>
+                    <li>
+                        s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
+                    </li>
+                    <li>
+                        It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+                    </li>
+                </ul>
+            </p>
+            <hr>
+            <p>
+                <h3>Test Cases: </h3>
+                <table width="auto" border="1" style="text-align: center;" cellpadding="5">
+                    <thead>
+                        <tr>
+                            <th width="5%">#TC.</th>
+                            <th>Input</th>
+                            <th>Output</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td>"III"</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>"LVIII"</td>
+                            <td>58</td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>"MCMXCIV"</td>
+                            <td>1994</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <br><hr>
+            
+            <div class="code" ng-controller="fileUpload">
+                <form enctype="multipart/form-data">
+                    <p> {{fileUploaded}} </p>
+                    <label for="uploadCode"> <code> &lt;Upload Code/&gt; </code> </label>
+                    <input type="file" name="uploadCode" id="uploadCode" style="display: none ;">
+                    <button type="submit" class="submitCode" ng-click="uploadCode('HW_1')">
+                        <div class="codeBtns">
+                            <div class="submit_codeBtn">
+                                <box-icon name='check-double' color="white"></box-icon>
+                                <span class="submit">Submit</span>
+                            </div>
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="user_details" ng-controller="profile_info">
+            <div class="profile" onclick="window.location.href='../users/profile.html'">
+                <div class="profile_icon">
+                    <img src="../users/user_profile_img/{{profile_img}}" alt="user_profile_img">
+                </div>
+                <div class="username" ng-model="username">
+                    <p>{{username}}</p>
+                </div>
+            </div>
+            <div class="vertical_menu" ng-click="showDropDown()" ng-mouseleave="hideDropdown()">
+                <box-icon name='dots-vertical-rounded' type='solid' color='#ffffff' ></box-icon>
+                <div class="drop-down" ng-show="dropDown" ng-mouseleave="hideDropdown()">
+                    <ul>
+                        <li><a href="#">Help</a></li><hr>
+                        <li ng-click="logout()" ><a href="../index.html">Logout</a></li><hr>
+                    </ul>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

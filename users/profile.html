@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="../overall.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="./profile.js"></script>
+    <script src="./upload_profile.js"></script>
+    <script src="../isCookieExists.js"></script>
+</head>
+<body onload="hadCookie()">
+    <div class="main_container" ng-app="main_app">
+
+        <div class="logo ">
+            <h1> <code> &lt;Hello World/&gt; </code></h1>
+        </div>
+        
+        <div class="quotes">
+
+        </div>
+
+        <div class="header">
+            <p> <i>Announcements:</i> </p>
+            <div class="announcements">
+                <div class="sliding-announcement"> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Use only C programming language.
+                </div>
+            </div>
+        </div>  
+
+        <div class="notifications">
+            <box-icon name='bell' color="white" type='solid'></box-icon>
+        </div>
+
+        <div class="menu-bar" ng-controller="menuBarCtrl">
+            <aside>
+                <ul ng-repeat="x in menu">
+                    <li><a href={{x.link}}>{{x.name}}</a><hr></li> 
+                </ul>
+            </aside>
+        </div>
+
+        <div class="opt_content">
+            <div class="profile_info">
+                <div class="profile_details" ng-controller="profile_details">
+                    <form onsubmit="uploadImage()" enctype="multipart/form-data">
+                        <table cellpadding="8" border="0">
+                            <tr>
+                                <td colspan="2" >
+                                    <div style="display:flex; align-items:center;">
+                                        <div id="profile-img-container">
+                                            <label for="upload_profile"><img src="./user_profile_img/{{profile_img}}" alt="user_profile_img" title="Change Photo"></label>
+                                            <input type="file" id="upload_profile" name="upload_profile" ng-model="upload_profile" style="display: none;">
+                                        </div>
+                                        <div id="solvedHistory">
+                                            <table border="1" width="100%"> 
+                                                <tr ng-model="solved_problems">
+                                                    <td colspan="2" align="center">
+                                                        Solved Problems - {{solved_problems}}
+                                                    </td>
+                                                </tr>
+                                                <tr ng-repeat="x in solvedPartition">
+                                                    <td>
+                                                        {{x.type}}
+                                                    </td>
+                                                    <td>
+                                                        {{x.count}}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr ng-repeat="x in user_info">
+                                <td>{{x.label}}</td>
+                                <td>
+                                    : <input type={{x.type}} name={{x.name}} id={{x.id}} value={{x.value}} disabled style="padding-left:10px">
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="change_save_btn">
+                            <tr>
+                                <td>
+                                    <a href="../change_password.html" target="_blank"><input type="button" name="changePassword" id="changePassword" value="Change Password"></a>
+                                </td>
+                                <td>
+                                    <input type="submit" name="saveChanges" id="saveChanges" value="Save Changes">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="user_details" ng-controller="profile_info">
+            <div class="profile" onclick="window.location.reload()">
+                <div class="profile_icon">
+                    <img src="./user_profile_img/{{profile_img}}" alt="user_profile_img">
+                </div>
+                <div class="username" ng-model="username">
+                    <p>{{username}}</p>
+                </div>
+            </div>
+            <div class="vertical_menu" ng-click="showDropDown()" ng-mouseleave="hideDropdown()">
+                <box-icon name='dots-vertical-rounded' type='solid' color='#ffffff' ></box-icon>
+                <div class="drop-down" ng-show="dropDown" ng-mouseleave="hideDropdown()">
+                    <ul>
+                        <li><a href="#">Help</a></li><hr>
+                        <li ng-click="logout()" ><a href="../index.html">Logout</a></li><hr>
+                    </ul>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

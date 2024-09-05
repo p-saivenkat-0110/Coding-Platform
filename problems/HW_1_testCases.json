@@ -1,0 +1,15 @@
+[
+    {
+      "input": "III\n",
+      "expectedOutput": "3\n"
+    },
+    {
+      "input": "LVIII\n",
+      "expectedOutput": "58\n"
+    },
+    {
+      "input": "MCMXCIV\n",
+      "expectedOutput": "1994\n"
+    }
+  ]
+  

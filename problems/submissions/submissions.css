@@ -1,0 +1,51 @@
+.header{
+    padding-left: 15px;
+}
+
+.opt_content{
+    padding: 25px;
+}
+
+.problemSTMTdetails{
+    height: 35px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.problemSTMTdetails a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.problemSTMTdetails a:hover{
+    box-shadow: 0px 0px 12px rgb(255, 196, 0);
+    background-color: whitesmoke;
+    color: black;
+}
+
+
+.submissions_info table{
+    width: 100%;
+    border-color:white;
+}
+
+.submissions_info table thead{
+    text-align: center;
+    background-color: rgb(125, 112, 0);
+}
+
+.submissions_info table thead tr td,.submissions_info table tbody tr td{
+    padding: 10px;
+    font-size: 15px;
+}
+
+.submissions_info table tbody tr td a{
+    text-decoration: none;
+    color: white;
+}

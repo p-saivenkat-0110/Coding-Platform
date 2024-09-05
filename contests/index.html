@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contests</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./contestsList.css">
+    <link rel="stylesheet" href="../overall.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="./contest.js"></script>
+    <script src="../isCookieExists.js"></script>
+</head>
+<body onload="hadCookie()">
+    <div class="main_container" ng-app="main_app">
+
+        <div class="logo ">
+            <h1> <code> &lt;Hello World/&gt; </code></h1>
+        </div>
+
+        <div class="quotes">
+
+        </div>
+
+        <div class="header" ng-controller="header">        
+            <input type="text" name="contest_search" placeholder="Search" id="search" ng-model="search" ng-change="bySearch()"> 
+            <label for="search"><box-icon name='search' color=" rgba(255, 255, 255, 0.4)" class="search-box"></box-icon> </label>
+        </div>
+
+        <div class="notifications">
+            <box-icon name='bell' color="white" type='solid'></box-icon>
+        </div>
+
+        <div class="menu-bar" ng-controller="menuBarCtrl">
+            <aside>
+                <ul ng-repeat="x in menu">
+                    <li><a href={{x.link}}>{{x.name}}</a><hr></li> 
+                </ul>
+            </aside>
+        </div>
+
+        <div class="opt_content" ng-controller="contestsList">
+            <div class="contests_info">
+                <table border="2" cellspacing="0" cellpadding="5">
+                    <thead>
+                        <tr>
+                            <td width="8%">No.</td>
+                            <td>Contest Name</td>
+                            <td width="30%">Start Date & Time</td>
+                            <td width="10%">Duration</td>
+                        </tr>
+                    </thead>
+                    <tbody>                        
+                        <tr ng-repeat="contest in listOfContests | filter : bySearch() ">
+                            <td> <a href="#"> {{contest.contest_no}} </a> </td>
+                            <td style="text-align: left;"> <a href="#">{{contest.contest_name}}</a> </td>
+                            <td> {{contest.start_dt | date: 'yyyy-MM-dd HH:mm:ss'}} </td>
+                            <td> {{contest.duration}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+        <div class="user_details" ng-controller="profile_info">
+            <div class="profile" onclick="window.location.href='../users/profile.html'">
+                <div class="profile_icon">
+                    <img src="../users/user_profile_img/{{profile_img}}" alt="user_profile_img">
+                </div>
+                <div class="username" ng-model="username">
+                    <p>{{username}}</p>
+                </div>
+            </div>
+            <div class="vertical_menu" ng-click="showDropDown()" ng-mouseleave="hideDropdown()">
+                <box-icon name='dots-vertical-rounded' type='solid' color='#ffffff' ></box-icon>
+                <div class="drop-down" ng-show="dropDown" ng-mouseleave="hideDropdown()">
+                    <ul>
+                        <li><a href="#">Help</a></li><hr>
+                        <li ng-click="logout()" ><a href="../index.html">Logout</a></li><hr>
+                    </ul>                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

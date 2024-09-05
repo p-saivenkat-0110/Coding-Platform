@@ -1,0 +1,86 @@
+.header{
+    padding-left: 15px;
+}
+
+.opt_content{
+    padding: 5px 35px;
+}
+
+.problemSTMTdetails{
+    height: 35px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.problemSTMTdetails a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.problemSTMTdetails a:hover{
+    box-shadow: 0px 0px 12px rgb(255, 196, 0);
+    background-color: whitesmoke;
+    color: black;
+}
+
+.code form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+    font-size: 15px;
+    bottom: 0;
+    /* background-color: aqua; */
+}
+
+.code code{
+    padding: 6px 20px;
+    background-color: rgb(6, 118, 6);
+    border-radius: 20px;
+}
+
+.code code:hover{
+    box-shadow: 0px 0px 5px rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.codeBtns{
+    /* background-color: antiquewhite; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+}
+
+.submit_codeBtn{
+    padding: 0px 5px;
+    background-color: rgb(6, 118, 6);
+    border-radius: 20px;
+    color: white;
+    border: 0;
+    margin: 0px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.submit_codeBtn:hover{
+    box-shadow: 0px 0px 5px rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.submit{
+    font-size: 18px;
+    padding: 3px 5px 3px 0px;
+}
+
+.submitCode{
+    background-color: rgb(6, 118, 6, 0);
+    border: 0;
+}
+

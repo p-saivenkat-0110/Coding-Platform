@@ -1,0 +1,128 @@
+.opt_content{
+    padding: 5px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.announcements{
+    margin: 0px 18px;
+    /* width: 100%; */
+    border-radius: 20px;
+    font-size: 14px;
+    color: yellow;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sliding-announcement{
+    display: flex;
+    align-items: center;
+    /* width: 500px; */
+    animation: slide 5s linear infinite;
+}
+
+.sliding-announcement:hover{
+    animation-play-state: paused;
+}
+
+@keyframes slide{
+    from{
+        transform: translateX( 0% );
+    }
+    to{
+        transform: translateX( -100% );
+    }
+}
+
+.typing-animate {
+    width: 24ch;
+    animation: typing 5s steps(24), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 50px;
+}  
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+    
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+} 
+.profile_info{
+    /* background-color: rgb(139, 145, 150); */
+    background-color:rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    height: 400px;
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: top;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#profile-img-container{
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#profile-img-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile_details{
+    font-size: 18px;
+}
+
+#emailInProfile,#usernameInProfile,#changePassword,#saveChanges{
+    width: 300px;
+    padding: 3px;
+    font-size: 16px;
+    border-radius: 20px;
+    margin-left: 5px;
+    background-color: white;
+}
+
+#changePassword,#saveChanges{
+    width: auto;
+    font-size: 16px;
+    background-color: green;
+    color: white;
+    border: 0;
+    padding: 5px;
+}
+
+#changePassword:hover, #saveChanges:hover{
+    box-shadow: 0px 0px 8px rgb(255, 255, 255);
+}
+
+.change_save_btn{
+    width: 100%;
+    /* background-color: aliceblue; */
+    text-align: center;
+    margin-top: 30px;
+}
+
+#solvedHistory{
+    /* background-color: aliceblue; */
+    margin: 20px;
+    width: 230px;
+    height: 150px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
