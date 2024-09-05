@@ -1,0 +1,58 @@
+.opt_content{
+    padding: 5px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.announcements{
+    margin: 0px 18px;
+    /* width: 100%; */
+    border-radius: 20px;
+    font-size: 14px;
+    color: yellow;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sliding-announcement{
+    display: flex;
+    align-items: center;
+    /* width: 500px; */
+    animation: slide 5s linear infinite;
+}
+
+.sliding-announcement:hover{
+    animation-play-state: paused;
+}
+
+@keyframes slide{
+    from{
+        transform: translateX( 0% );
+    }
+    to{
+        transform: translateX( -100% );
+    }
+}
+
+.typing-animate {
+    width: 24ch;
+    animation: typing 5s steps(24), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 50px;
+}  
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+    
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+} 

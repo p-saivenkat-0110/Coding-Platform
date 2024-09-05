@@ -1,0 +1,141 @@
+body{
+    background-image: url('./images/bg.avif');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+.similar{
+    width: 350px;
+    height: 350px; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    perspective: 500px;
+}
+
+.in_box{
+    transform-style: preserve-3d;
+    transform-origin: right;
+    transition: transform .6s;
+}
+
+.in_box.is-flipped {
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+.LoginPage,.SignupPage,.forgotPasswordPage,.newPasswordPage{
+    width: 380px;
+    height: 380px;
+    background-color:rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 2%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    left: -6%;
+}
+
+.SignupPage{
+    height: 460px;
+    transform: rotateY(-180deg);
+}
+
+.forgotPasswordPage,.newPasswordPage{
+    height: 310px;
+}
+
+.newPasswordPage{
+    visibility: hidden;
+}
+
+#usernameLP, #passwordLP,#emailSP,#usernameSP,#passwordSP,#cpasswordSP,#emailFP, #OTP,#passwordNP,#cpasswordNP{
+    padding: 8px 0px 8px 0px;
+    width: 320px;
+    font-size: 15px;
+    margin: 2%;
+    border-radius: 8px;
+    text-indent: 12px;
+    border: 0;
+}
+
+#OTP{
+    width: 110px;
+    margin: 25px 8px 20px 0px;
+}
+
+#show_iconLP,#hide_iconLP,#show_iconSP,#hide_iconSP,#show_iconSPc,#hide_iconSPc,#show_iconNP,#hide_iconNP,#show_iconNPc,#hide_iconNPc{
+    width: 18px;
+    bottom: 12px;
+    right: 38px;
+    position:absolute;
+    color: black;
+    font-size: 22px;
+}
+
+#show_iconSP,#hide_iconSP,#show_iconNP,#hide_iconNP{
+    bottom: 60px;
+}
+
+#show_iconLP,#show_iconSP,#show_iconSPc,#show_iconNP,#show_iconNPc{
+    display: none;
+}
+
+#forgot_password_linkLP{
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0,0);  
+    border:0;
+    font-style: italic;
+    margin-right: 180px;
+}
+
+#forgot_password_linkLP:hover{
+    cursor: pointer;
+}
+
+#LoginBtnLP,#SignupBtnSP{
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 14px;
+    padding: 5px;
+    font-variant: small-caps;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+#signupBtnLP,#loginBtnSP,#loginBtnFP,#loginBtnFP{
+    width: auto;
+    height: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+#verifyOTP, #sendOTP, #UpdatePassword{
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    margin: 25px 5px 14px 0px;
+    padding: 0px;
+    font-variant: small-caps;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+}
+#verifyOTP{
+    width: 65px;
+}
+#UpdatePassword{
+    width: 150px;
+    margin-top: 12px;
+    background-color: green;
+    color: white;
+}

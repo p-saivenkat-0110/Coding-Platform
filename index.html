@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign Up</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<body onload="checkCookie()">
+    <div class="out_box similar">
+        <div class="in_box similar">
+            <div class="LoginPage similar">
+                <h1 style="font-size: 40px;">Login Form!!</h1>
+                <div id="errorMSGLP" style="color: yellow; font-style: italic">&nbsp;</div>
+                <form name="Login" id="Login">
+                    <input type="text" name="usernameLP" id="usernameLP" placeholder="Username/Email" minlength="6" maxlength="20">
+                    <div style="position: relative;">
+                        <box-icon name='hide' id="hide_iconLP" onmouseover="viewPassLP()"></box-icon>
+                        <box-icon name='show' id="show_iconLP" onmouseout="viewPassLP()"></box-icon>
+                        <input type="password" name="passwordLP" id="passwordLP" placeholder="Password" minlength="8" maxlength="16">
+                    </div>
+                    <a id="forgot_password_linkLP" href="./change_password.html">Forgot Password</a>
+                    <input type="button" name="LoginBtn" id="LoginBtnLP" value="Login" onclick="validateLogin()">
+                </form>
+                <hr>
+                <p>
+                    <i>New user?</i>
+                    <button type="button" id="signupBtnLP" onclick="flip()">Sign Up</button>
+                </p>
+            </div>
+
+            <div class="SignupPage similar">
+                <h1 style="font-size: 40px;">Sign Up Form!!</h1>
+                <div id="errorMSGSP" style="color: yellow; font-style: italic">&nbsp; </div>
+                <form name="SignUP" id="SignUP">
+                    <input type="text" name="emailSP" id="emailSP" placeholder="Email" maxlength="50">
+                    <input type="text" name="usernameSP" id="usernameSP" placeholder="Username" minlength="6" maxlength="20">
+                    <div style="position: relative;">
+                        <box-icon name='hide' id="hide_iconSP" onmouseover="viewPassSP()"></box-icon>
+                        <box-icon name='show' id="show_iconSP" onmouseout="viewPassSP()"></box-icon>
+                        <box-icon name='hide' id="hide_iconSPc" onmouseover="viewPassSPc()"></box-icon>
+                        <box-icon name='show' id="show_iconSPc" onmouseout="viewPassSPc()"></box-icon>
+                        <input type="password" name="passwordSP" id="passwordSP" placeholder="Password" minlength="8" maxlength="16" >
+                        <input type="password" name="cpasswordSP" id="cpasswordSP" placeholder="Confirm Password" minlength="8" maxlength="16" >    
+                    </div>
+                    <input type="button" name="SignupBtn"value="Sign Up" id="SignupBtnSP" onclick="validateSignUp()">
+                    <hr>
+                </form>
+                <p>
+                    <i>Existing user?</i>
+                    <button type="button" id="loginBtnSP" onclick="flip()">Login</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
