@@ -6,4 +6,4 @@
 - User authentication and profile management
 - Solution submission and progress tracking
 ---
-* `DEMO` directory contains short VIDEO Demo of Web Application.
+* `DEMO` directory contains short VIDEO Demo of Web Application _(User credentials in video are Masked)_.
